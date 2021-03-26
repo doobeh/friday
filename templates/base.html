@@ -1,0 +1,17 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <!-- ... -->
+</head>
+<body>
+    <div class="w-full bg-black text-white p-4 mb-5">
+        <a href="{{ url_for('home') }}">Home</a>
+    </div>
+    {% block content %}
+
+    {% endblock %}
+</body>
+</html>
