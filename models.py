@@ -9,6 +9,9 @@ class User(db.Model):
     password = db.Column(db.String)
     email = db.Column(db.String)
 
+    def __repr__(self):
+        return self.username
+
 
 class Post(db.Model):
     __tablename__ = 'post'

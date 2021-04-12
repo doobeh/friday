@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <form method="post">
+        {{ form.hidden_tag() }}
+        <!-- comment-- visible in generated html -->
+        {# comment cleared from html #}
+        {{ form.username() }} <br/>
+        {{ form.password() }} <br/>
+        {% if form.password.errors %}
+            {% for error in form.password.errors %}
+                <h3>{{ error }}</h3>
+            {% endfor %}
+        {% endif %}
+        {{ form.email() }}<br/>
+        {{ form.users }}
+        <button class="bg-indigo-700" type="submit">Add User</button>
+    </form>
+
+    {% if form.errors %}
+        {% for error in form.errors %}
+            <h3>{{ error }}</h3>
+        {% endfor %}
+    {% endif %}
+
+{% endblock %}
